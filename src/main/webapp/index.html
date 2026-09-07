@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management System</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;
+            color: #333;
+            padding: 30px;
+        }
+
+        /* Main Heading */
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #777;
+            font-size: 16px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* Cards Grid */
+        .operations {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        /* Individual Card */
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 22px;
+            color: #333;
+        }
+
+        /* Labels */
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* Input Fields */
+        input[type="number"],
+        input[type="text"] {
+            width: 100%;
+            padding: 11px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input[type="number"]:focus,
+        input[type="text"]:focus {
+            border-color: #555;
+        }
+
+        /* Buttons */
+        input[type="submit"],
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background: #333;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover,
+        button:hover {
+            background: #555;
+        }
+
+        /* Show All Section */
+        .show-card {
+            margin-top: 25px;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+        }
+
+        .show-card h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 35px;
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 750px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .operations {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <div class="header">
+
+            <h1>Employee Management System</h1>
+
+            <p>Manage employee records easily</p>
+
+        </div>
+
+
+        <div class="operations">
+
+
+            <!-- ADD EMPLOYEE -->
+            <div class="card">
+
+                <h2>ADD EMPLOYEE</h2>
+
+                <form action="add" method="get">
+
+                    <label>Employee ID</label>
+                    <input type="number" name="id" required>
+
+                    <label>Employee Name</label>
+                    <input type="text" name="name" required>
+
+                    <label>Employee Salary</label>
+                    <input type="number" name="salery" required>
+
+                    <input type="submit" value="ADD">
+
+                </form>
+
+            </div>
+
+
+            <!-- UPDATE EMPLOYEE -->
+            <div class="card">
+
+                <h2>UPDATE EMPLOYEE</h2>
+
+                <form action="update" method="get">
+
+                    <label>Employee ID</label>
+                    <input type="number" name="id" required>
+
+                    <label>Employee Name</label>
+                    <input type="text" name="name" required>
+
+                    <label>Employee Salary</label>
+                    <input type="text" name="salery" required>
+
+                    <input type="submit" value="UPDATE">
+
+                </form>
+
+            </div>
+
+
+            <!-- DELETE EMPLOYEE -->
+            <div class="card">
+
+                <h2>DELETE EMPLOYEE</h2>
+
+                <form action="delete" method="get">
+
+                    <label>Employee ID</label>
+                    <input type="number" name="id" required>
+
+                    <input type="submit" value="DELETE">
+
+                </form>
+
+            </div>
+
+
+            <!-- FIND EMPLOYEE -->
+            <div class="card">
+
+                <h2>FIND EMPLOYEE</h2>
+
+                <form action="find" method="get">
+
+                    <label>Employee ID</label>
+                    <input type="number" name="id" required>
+
+                    <input type="submit" value="FIND">
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHOW ALL EMPLOYEES -->
+        <div class="show-card">
+
+            <h2>ALL EMPLOYEES</h2>
+
+            <form action="show" method="get">
+
+                <button type="submit">SHOW ALL EMPLOYEES</button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Footer -->
+        <footer>
+
+            Amol Avhale | amolavhale1101@gmail.com | 07-01-2026
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
+```
